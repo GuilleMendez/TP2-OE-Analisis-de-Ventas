@@ -24,3 +24,7 @@ Tareas sugeridas
 ○ ventas por mes
 ● Generar un gráfico simple que represente la evolución de ventas
 
+Respecto al DataSet, se utilizó la bibliografía aconsejada por el cuerpo docente en la descripcion del trabajo: 
+https://gist.github.com/khanusama20/ee33c2869dd5cf3cebdf020be1ca43f6
+
+En cuanto al funcionamiento del script, solo requiere correr el programa, no ingresar datos ya que los mismos son recogidos del archivo csv.
