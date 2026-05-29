@@ -1,1 +1,18 @@
+import csv
+from datetime import datetime
 
+# ---------------------------------------------------------
+# Cargar ventas desde el archivo CSV
+# ---------------------------------------------------------
+def cargar_ventas():
+    ventas = []
+    with open("sales_sample_2024.csv", "r", encoding="utf-8") as archivo:
+        lector = csv.DictReader(archivo)
+        for fila in lector:
+            venta = {
+                "id": int(fila["id"]),
+                "fecha": datetime.strptime(fila["sales_date"], "%Y-%m-%d"),
+                "monto": float(fila["sales_amount"])
+            }
+            ventas.append(venta)
+    return ventas
