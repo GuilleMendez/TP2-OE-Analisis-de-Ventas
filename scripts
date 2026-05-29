@@ -46,3 +46,21 @@ def mostrar_tabla_ventas_mensuales(ventas_mensuales):
     print("-" * 25)
     for mes, monto in ventas_mensuales.items():
         print(f"{mes:<10} | ${monto:>12,.2f}")
+# ---------------------------------------------------------
+# Programa principal
+# ---------------------------------------------------------
+def main():
+    ventas = cargar_ventas()
+
+    print("=== Indicadores de Ventas 2024 ===")
+    print(f"Ventas totales del año: ${ventas_totales(ventas):,.2f}")
+
+    mayor = dia_mayor_venta(ventas)
+    print(f"Día con mayor venta: {mayor['fecha'].strftime('%Y-%m-%d')} (${mayor['monto']:,.2f})")
+
+    ventas_mensuales = ventas_por_mes(ventas)
+    mostrar_tabla_ventas_mensuales(ventas_mensuales)
+
+# Ejecutar
+if __name__ == "__main__":
+    main()
