@@ -37,3 +37,12 @@ def ventas_por_mes(ventas):
         mes = v["fecha"].strftime("%Y-%m")
         resumen[mes] = resumen.get(mes, 0) + v["monto"]
     return resumen
+# ---------------------------------------------------------
+# Mostrar ventas mensuales en forma de tabla
+# ---------------------------------------------------------
+def mostrar_tabla_ventas_mensuales(ventas_mensuales):
+    print("\n=== Ventas por mes ===")
+    print(f"{'Mes':<10} | {'Ventas ($)':>12}")
+    print("-" * 25)
+    for mes, monto in ventas_mensuales.items():
+        print(f"{mes:<10} | ${monto:>12,.2f}")
