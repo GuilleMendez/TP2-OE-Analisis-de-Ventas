@@ -16,3 +16,24 @@ def cargar_ventas():
             }
             ventas.append(venta)
     return ventas
+# ---------------------------------------------------------
+# Ventas totales del año
+# ---------------------------------------------------------
+def ventas_totales(ventas):
+    return sum(v["monto"] for v in ventas)
+
+# ---------------------------------------------------------
+# Día con mayor venta
+# ---------------------------------------------------------
+def dia_mayor_venta(ventas):
+    return max(ventas, key=lambda v: v["monto"])
+
+# ---------------------------------------------------------
+# Ventas por mes (YYYY-MM)
+# ---------------------------------------------------------
+def ventas_por_mes(ventas):
+    resumen = {}
+    for v in ventas:
+        mes = v["fecha"].strftime("%Y-%m")
+        resumen[mes] = resumen.get(mes, 0) + v["monto"]
+    return resumen
